@@ -20,8 +20,7 @@ ids_urls = [(feed[0], feed[1]) for feed in feeds]
 
 # List Episodes
 st.header("Episodes")
-selected_feed_id = st.selectbox("Select Feed to List Episodes", feed_ids) 
-                                #format_func=lambda x: friendly_names[x-1])
+selected_feed_id = st.selectbox("Select Feed to List Episodes", feed_ids, format_func=lambda x: friendly_names[x-1])
 
 if selected_feed_id:
     episodes = get_episodes(selected_feed_id, 5)
